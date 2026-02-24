@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Access ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:#8b0000;
+    color:white;
+    overflow:hidden;
+}
+
+/* LOGIN BOX */
+.container{
+    text-align:center;
+}
+
+input{
+    padding:10px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    background:#ff1493;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#ff69b4;
+}
+
+/* PROCESSING SCREEN */
+#processing{
+    display:none;
+    font-size:20px;
+}
+
+/* FINAL SCREEN */
+#finalScreen{
+    display:none;
+    text-align:center;
+    animation: bgMove 6s infinite alternate;
+    background: linear-gradient(45deg,#8b0000,#ff0000,#b30000);
+    background-size:300% 300%;
+    width:100%;
+    height:100vh;
+    position:absolute;
+    top:0;
+    left:0;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    display:flex;
+}
+
+@keyframes bgMove {
+    0%{background-position:left;}
+    100%{background-position:right;}
+}
+
+.name{
+    font-family:'Pacifico', cursive;
+    font-size:80px;
+    color:#ff66cc;
+    text-shadow:0 0 20px #ff1493, 0 0 40px #ff1493;
+    animation:glow 1.5s infinite alternate, heartbeat 1.5s infinite;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #ff66cc,0 0 20px #ff1493;}
+    to{text-shadow:0 0 30px #ff66cc,0 0 60px #ff1493;}
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    25%{transform:scale(1.05);}
+    50%{transform:scale(1);}
+    75%{transform:scale(1.05);}
+    100%{transform:scale(1);}
+}
+
+.message{
+    font-size:40px;
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="loginBox">
+    <h2>Click to Login ❤️</h2>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+</div>
+
+<div id="processing">
+    💞 Processing your love access... 💞
+</div>
+
+<div id="finalScreen">
+    <div class="message">
+        <span class="name">Chuchu</span><br>
+        is a fine beautiful girl ❤️
+    </div>
+</div>
+
+<script>
+function login(){
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if(user === "Chrisomapeter" && pass === "1998"){
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("processing").style.display = "block";
+
+        setTimeout(()=>{
+            document.getElementById("processing").style.display = "none";
+            document.getElementById("finalScreen").style.display = "flex";
+        }, 3000);
+    } else {
+        alert("Wrong details 😅 Try again.");
+    }
+}
+</script>
+
+</body>
+</html>
